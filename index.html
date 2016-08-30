@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script language="javascript" src="js/lib/hammer.js"></script>
+
+  <script language="javascript" src="js/models.js"></script>
+  <script language="javascript" src="js/interface.js"></script>
+
+  <script language="javascript" src="scenarios/testscen.js"></script>
+
+  <script language="javascript" src="js/armies.js"></script>
+  <script language="javascript" src="js/deployment.js"></script>
+  <script language="javascript" src="js/effects.js"></script>
+  <script language="javascript" src="js/map.js"></script>
+  <script language="javascript" src="js/production.js"></script>
+  <script language="javascript" src="js/publicmood.js"></script>
+  <script language="javascript" src="js/research.js"></script>
+
+  <script language="javascript" src="js/leader.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>The Leader of Nation</title>
+</head>
+
+<body>
+<div id="grid">
+</div>
+<div id="controls">
+  <div id="development_sec">
+  <div id="military" class="dev_section">
+    <span id="military_icon" style='background-image:url("gfx/military.png")'>&nbsp;</span>
+    <span id="military_value" class="dev_value">999</span>
+  </div>
+  <div id="research" class="dev_section">
+    <span id="research_icon" style='background-image:url("gfx/research.png")'>&nbsp;</span>
+    <span id="research_value" class="dev_value">999</span>
+  </div>
+  <div id="publicmood" class="dev_section">
+    <span style='background-image:url("gfx/moodofpublic.png")' id="publicmood_icon">&nbsp;</span>
+    <span id="publicmood_value" class="dev_value">0%</span>
+  </div>
+ </div>
+<!-- <div id="deployment_hint" style="display:none" onclick="clearDeploymentOnclicks()">
+  <p>Select a region where you want new units to be deployed or tap/click here to abort.</p>
+ </div>!-->
+</div>
+</body>
+</html>

@@ -1,0 +1,244 @@
+/*******
+THE LEADER OF NATION
+(c) Szymon Rutkowski 2013. All rights reserved.
+********/
+
+body {
+  background-color: #111;
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.ld { background-image: url("../gfx/ld.png") }
+
+#controls {
+  background-color: darkslategray;
+  background: -webkit-linear-gradient(darkslategray,slategray); /* For Safari */
+  background: -o-linear-gradient(darkslategray,slategray); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(darkslategray,slategray); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(darkslategray,slategray); 
+  color: #eee;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  height: 120px;
+  width: 310px;
+  border: 5px outset #222;
+  z-index: 10000;
+}
+#deployment_hint {
+}
+#region_view {
+  white-space: nowrap;
+}
+.controls_button {
+  background-color: #688;
+  color: #111;
+  width: 136px;
+  height: 27px;
+  margin: 3px 5px 3px 5px;
+  padding-top: 5px;
+  border: 3px outset #111;
+  text-align: center;
+  display: inline-block;
+}
+#pointer {
+  z-index: 200;
+}
+.army_button {
+  background-color: #688;
+  width: 83px;
+  height: 38px;
+  margin: 3px 5px 3px 5px;
+  padding-top: 7px;
+  border: 3px outset #111;
+  text-align: center;
+  font-size: 13px;
+  display: inline-block;
+}
+.controls_bar {
+  margin: 5px;
+  white-space: nowrap;
+}
+.progress_block {
+  background-color: limegreen;
+  display: inline-block;
+  height: 30px;
+  width: 22px;
+  margin-left: 3px;
+}
+#military_icon, #research_icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+.ready { /*applies to icon*/
+  margin: -1px;
+}
+.unit_count {
+  color: black;
+  border-top-right-radius: 15px;
+  position: relative;
+  top: 11px;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+#grid {
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+  line-height: 0px;
+}
+.cell {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  position: absolute;
+}
+.cell_clear {
+  clear: left;
+}
+
+/* Regions. Production modes. */
+.flag {
+  margin-left: 10px;
+  margin-top: 10px;
+  border: 1px solid; 
+}
+.army {
+  z-index: 200;
+  width: 48px;
+  height: 48px;
+  position: absolute;
+}
+.army_strength {
+  color: #fff;
+  background-image: url("../gfx/army-strength.png");
+  background-repeat: no-repeat;
+  width: 12px;
+  height: 48px;
+  z-index: 202;
+  line-height: 12px;
+  font-size: 10px;
+  font-weight: lighter;
+  padding-left: 12px;
+  float: left;
+  position:relative;
+}
+.army_icon {
+  background-image: url("../gfx/ld.png");
+  background-repeat: no-repeat;
+  width: 43px;
+  height: 48px;
+  z-index: 200;
+  position:relative;
+  margin-left: 5px;
+}
+.sldr-s { background-position: 0px 0px; }
+.sldr-w { background-position: -48px 0px; }
+.sldr-e { background-position: -96px 0px; }
+.sldr-n { background-position: -144px 0px;}
+
+.fog_of_war {
+  background-color: #333;
+  opacity:0.4;
+  filter:alpha(opacity=40); /* For IE8 and earlier */
+}
+.subtle_fog_of_war {
+  opacity:0.4;
+  filter:alpha(opacity=40); /* For IE8 and earlier */
+}
+.agriculture {
+  background-color: yellowgreen;
+  background: -webkit-linear-gradient(#628320,yellowgreen); /* For Safari */
+  background: -o-linear-gradient(#628320,yellowgreen); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#628320,yellowgreen); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right,#628320,yellowgreen); 
+}
+.fortified_area {
+  background-color: #777;
+  background: -webkit-linear-gradient(#777,#555); /* For Safari */
+  background: -o-linear-gradient(#777,#555); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#777,#555); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right,#777,#555); 
+}
+.heavy_industry {
+  background-color: #b22222;
+  background: -webkit-linear-gradient(#7D1818,#b22222); /* For Safari */
+  background: -o-linear-gradient(#7D1818,#b22222); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#7D1818,#b22222); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right,#7D1818,#b22222); 
+}
+.light_industry {
+  background-color: chocolate;
+  background: -webkit-linear-gradient(#934A15,chocolate); /* For Safari */
+  background: -o-linear-gradient(#934A15,chocolate); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#934A15,chocolate); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right,#934A15,chocolate); 
+}
+.university {
+  background-color: slateblue;
+  background: -webkit-linear-gradient(slateblue,#9086C9); /* For Safari */
+  background: -o-linear-gradient(slateblue,#9086C9); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(slateblue,#9086C9); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right,slateblue,#9086C9); 
+}
+
+/* Regions: border sprites. */
+.terrain { 
+  opacity:0.8;
+  filter:alpha(opacity=80); /* For IE8 and earlier */
+}
+.lwend { background-position: 0px 48px }
+.uend { background-position: 50px 48px }
+.rend { background-position: 100px 48px }
+.lfend { background-position: 150px 48px }
+.lrcor { background-position: 0px 98px }
+.urcor { background-position: 50px 98px }
+.ulcor { background-position: 100px 98px }
+.llcor { background-position: 150px 98px }
+.lfonly { background-position: 0px 148px }
+.uonly { background-position: 50px 148px }
+.ronly { background-position: 100px 148px }
+.lwonly { background-position: 150px 148px }
+.hpipe { background-position: 0px 198px }
+.vpipe { background-position: 50px 198px }
+
+/* Screens. */
+.screen {
+  z-index: 200000;
+  background-color: darkslategray;
+  background: -webkit-linear-gradient(darkslategray,slategray); /* For Safari */
+  background: -o-linear-gradient(darkslategray,slategray); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(darkslategray,slategray); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(darkslategray,slategray); 
+  color: #eee;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  height: 310px;
+  width: 310px;
+  border: 5px outset #222;
+}
+.scr_information {
+  color: #fff;
+  width: 270px;
+  margin: 5px 10px;
+  padding: 4px;
+  font-size: 15px;
+}
+.scr_information em {
+  font-style: normal;
+  color: #111;
+}
+.scr_button {
+  background-color: #ddd;
+  color: #111;
+  width: 270px;
+  margin: 5px 10px;
+  padding: 4px;
+  font-size: 16px;
+  font-style: normal;
+}

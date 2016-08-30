@@ -1,0 +1,229 @@
+/*******
+THE LEADER OF NATION
+(c) Szymon Rutkowski 2013. All rights reserved.
+********/
+
+body {
+  background-color: #111;
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+big {
+  color: #111;
+  font-style: normal;
+  font-variant: small-caps;
+  font-size: 1.3em;
+}
+
+#debug_window {
+  background-color: white;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  height: 120px;
+  width: 310px;
+}
+
+#controls {
+  background-color: darkslategray;
+  color: #eee;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  height: 120px;
+  width: 310px;
+  border: 5px outset #222;
+  z-index: 10000;
+}
+#deployment_hint {
+}
+#region_view {
+  white-space: nowrap;
+}
+.controls_button {
+  background-color: #688;
+  color: #111;
+  width: 136px;
+  height: 27px;
+  margin: 3px 5px 3px 5px;
+  padding-top: 5px;
+  border: 3px outset #111;
+  text-align: center;
+  display: inline-block;
+}
+#pointer {
+  z-index: 200;
+}
+.army_button {
+  background-color: #688;
+  width: 83px;
+  height: 38px;
+  margin: 3px 5px 3px 5px;
+  padding-top: 7px;
+  border: 3px outset #111;
+  text-align: center;
+  font-size: 13px;
+  display: inline-block;
+}
+.controls_bar {
+  margin: 5px;
+  white-space: nowrap;
+}
+.progress_block {
+  background-color: limegreen;
+  display: inline-block;
+  height: 30px;
+  width: 22px;
+  margin-left: 3px;
+}
+#military_icon, #research_icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+.ready { /*applies to icon*/
+  margin: -1px;
+}
+.unit_count {
+  background-color: darkslategray;
+  color: black;
+  border-top-right-radius: 15px;
+  position: relative;
+  top: 11px;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+#grid {
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+  line-height: 0px;
+}
+.cell {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  position: absolute;
+}
+.cell_clear {
+  clear: left;
+}
+
+/* Regions. Production modes. */
+.flag {
+  margin-left: 10px;
+  margin-top: 10px;
+  border: 1px solid; 
+}
+.army {
+  z-index: 200;
+  position: absolute;
+}
+.army_strength {
+  z-index: 200;
+  color: white;
+  font-size: 16px;
+  position: absolute;
+  width: 48px;
+  text-align: right;
+}
+
+.fog_of_war {
+  background-color: #333;
+  opacity:0.4;
+  filter:alpha(opacity=40); /* For IE8 and earlier */
+}
+.subtle_fog_of_war {
+  opacity:0.4;
+  filter:alpha(opacity=40); /* For IE8 and earlier */
+}
+.agriculture {
+  background-image: url("../gfx/agriculture.gif");
+}
+.fortified_area {
+  background-image: url("../gfx/fortifications.png");
+}
+.heavy_industry {
+  background-image: url("../gfx/heavy.png");
+}
+.light_industry {
+  background-image: url("../gfx/light.gif");
+}
+.university {
+  background-image: url("../gfx/university.gif");
+}
+
+/* Regions: border sprites. */
+.uend { border-style:solid; border-color:#222;
+  z-index: 2;
+  border-top-width:3px; border-left-width:3px; border-right-width:3px; border-bottom-width:0  }
+.lfend { border-style:solid; border-color:#222;
+  z-index: 2;
+  border-top-width:3px; border-left-width:3px; border-bottom-width:3px; border-right-width:0 }
+.rend { border-style:solid; border-color:#222;
+  z-index: 2;
+  border-top-width:3px; border-bottom-width:3px; border-right-width:3px; border-left-width:0 }
+.lwend { border-style:solid; border-color:#222;
+  z-index: 2;
+  border-bottom-width:3px; border-left-width:3px; border-right-width:3px; border-top-width:0 }
+.ulcor { border-style:solid; border-color:#222;
+  z-index: 2;
+  border-top-width:3px; border-left-width:3px; border-right-width:0; border-bottom-width:0 }
+.urcor { border-style:solid; border-color:#222;
+  z-index: 2;
+  border-top-width:3px; border-right-width:3px; border-bottom-width:0; border-left-width:0 }
+.llcor { border-style:solid; border-color: transparent transparent #222  #222;
+  z-index: 2; border-width: 3px; }
+.lrcor { border-style:solid; border-color: transparent #222 #222 transparent;
+  z-index: 2; border-width:3px; }
+.hpipe { border-style:solid; border-color:#222;
+  z-index: 2;
+  border-top-width:3px; border-bottom-width:3px; border-left-width:0; border-right-width:0 }
+.vpipe { border-style:solid; border-color:#222;
+  z-index: 2;
+  border-left-width:3px; border-right-width:3px; border-top-width:0; border-bottom-width:0 }
+.lfonly { border-style:solid; border-color:#222;
+  z-index: 2;
+  border-left-width:3px; border-right-width:0; border-top-width:0; border-bottom-width:0 }
+.ronly { border-style:solid; border-color:#222;
+  z-index: 2;
+  border-left-width:0; border-right-width:3px; border-top-width:0; border-bottom-width:0 }
+.uonly { border-style:solid; border-color:#222;
+  z-index: 2;
+  border-left-width:0; border-right-width:0; border-top-width:3px; border-bottom-width:0 }
+.lwonly { border-style:solid; border-color:#222;
+  z-index: 2;
+  border-left-width:0; border-right-width:0; border-top-width:0; border-bottom-width:3px }
+
+/* Screens. */
+.screen {
+  z-index: 200000;
+  background-color: #444;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.scr_information {
+  background-color: #bbb;
+  color: #fff;
+  width: 85%;
+  margin: 0.3em;
+  padding: 1em;
+}
+.scr_button {
+  background-color: #ddd;
+  color: #111;
+  width: 85%;
+  margin: 0.3em;
+  margin-top: 0.8em;
+  padding: 0.3em;
+  font-style: normal;
+  font-variant: small-caps;
+  font-size: 1.7em;
+}

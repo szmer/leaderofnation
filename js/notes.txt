@@ -1,0 +1,4 @@
+Cells in region:
+0,1,2 - armies
+2 - main army
+3 - owner flag
